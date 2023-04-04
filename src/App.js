@@ -1,7 +1,13 @@
 import "./App.css";
+import { Mint, Navbar } from "./components";
 
 function App() {
-  return <div className="App"> Course DNFT </div>;
+  return (
+    <>
+      <Navbar />
+      <Mint />
+    </>
+  );
 }
 
 export default App;

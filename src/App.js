@@ -1,11 +1,16 @@
+import React from "react";
 import "./App.css";
-import { Mint, Navbar } from "./components";
+import { Navbar } from "./components";
+import { Body } from "./container";
+import UserState from "./context/User/UserState";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Mint />
+      <UserState>
+        <Navbar />
+        <Body />
+      </UserState>{" "}
     </>
   );
 }

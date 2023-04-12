@@ -1,4 +1,4 @@
-export const contractAddress = "0x1AeE7149c7aa8670f88a18d18Ab82c699578a0FA";
+export const contractAddress = "0x5DBDd7AdD9C8A2B130d21757325c90c60FB04FEF"
 export const abi = [
   {
     inputs: [],
@@ -74,6 +74,41 @@ export const abi = [
     type: "function",
   },
   {
+    inputs: [],
+    name: "createBatch",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "to",
+        type: "address",
+      },
+      {
+        internalType: "string",
+        name: "uri",
+        type: "string",
+      },
+      {
+        internalType: "string",
+        name: "_descrp",
+        type: "string",
+      },
+      {
+        internalType: "uint256",
+        name: "_batchId",
+        type: "uint256",
+      },
+    ],
+    name: "enrollStudent",
+    outputs: [],
+    stateMutability: "nonpayable",
+    type: "function",
+  },
+  {
     anonymous: false,
     inputs: [
       {
@@ -95,24 +130,6 @@ export const abi = [
   {
     inputs: [],
     name: "renounceOwnership",
-    outputs: [],
-    stateMutability: "nonpayable",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
-        internalType: "address",
-        name: "to",
-        type: "address",
-      },
-      {
-        internalType: "string",
-        name: "uri",
-        type: "string",
-      },
-    ],
-    name: "safeMint",
     outputs: [],
     stateMutability: "nonpayable",
     type: "function",
@@ -269,6 +286,30 @@ export const abi = [
     inputs: [
       {
         internalType: "address",
+        name: "",
+        type: "address",
+      },
+    ],
+    name: "addrToFaculty",
+    outputs: [
+      {
+        internalType: "bool",
+        name: "_isFaculty",
+        type: "bool",
+      },
+      {
+        internalType: "uint256",
+        name: "_noOfBatches",
+        type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
         name: "owner",
         type: "address",
       },
@@ -279,6 +320,45 @@ export const abi = [
         internalType: "uint256",
         name: "",
         type: "uint256",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "address",
+        name: "",
+        type: "address",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
+      },
+    ],
+    name: "facultyToStudent",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "_tokenId",
+        type: "uint256",
+      },
+      {
+        internalType: "address",
+        name: "_studentAddr",
+        type: "address",
+      },
+      {
+        internalType: "string",
+        name: "_description",
+        type: "string",
       },
     ],
     stateMutability: "view",
@@ -298,6 +378,25 @@ export const abi = [
         internalType: "address",
         name: "",
         type: "address",
+      },
+    ],
+    stateMutability: "view",
+    type: "function",
+  },
+  {
+    inputs: [
+      {
+        internalType: "uint256",
+        name: "_batchId",
+        type: "uint256",
+      },
+    ],
+    name: "getStudentLen",
+    outputs: [
+      {
+        internalType: "uint256",
+        name: "",
+        type: "uint256",
       },
     ],
     stateMutability: "view",
@@ -375,30 +474,6 @@ export const abi = [
   {
     inputs: [
       {
-        internalType: "uint256",
-        name: "",
-        type: "uint256",
-      },
-    ],
-    name: "studentList",
-    outputs: [
-      {
-        internalType: "address",
-        name: "_studentAddr",
-        type: "address",
-      },
-      {
-        internalType: "uint256",
-        name: "_tokenId",
-        type: "uint256",
-      },
-    ],
-    stateMutability: "view",
-    type: "function",
-  },
-  {
-    inputs: [
-      {
         internalType: "bytes4",
         name: "interfaceId",
         type: "bytes4",
@@ -447,4 +522,4 @@ export const abi = [
     stateMutability: "view",
     type: "function",
   },
-];
+]
